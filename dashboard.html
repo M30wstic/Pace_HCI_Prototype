@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pace | Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="app-body">
+  <main class="app-page">
+    <header class="app-header">
+      <section class="brand app-brand" aria-label="Pace">
+        <div class="brand-mark app-brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img">
+            <path d="M21 7c-4 0-7 3-7 7-3 1-5 4-5 8 0 2 .8 4 2.2 5.4A8 8 0 0 0 18 40c1.2 0 2.3-.3 3.2-.8V7.1L21 7Z"></path>
+            <path d="M27 7c4 0 7 3 7 7 3 1 5 4 5 8 0 2-.8 4-2.2 5.4A8 8 0 0 1 30 40c-1.2 0-2.3-.3-3.2-.8V7.1L27 7Z"></path>
+            <path d="M14 17c2 .4 3.4 1.7 4 3.8M14 29c2.2-.1 3.8-1.1 4.8-3M34 17c-2 .4-3.4 1.7-4 3.8M34 29c-2.2-.1-3.8-1.1-4.8-3"></path>
+          </svg>
+        </div>
+        <h1>Pace</h1>
+      </section>
+      <p>Stress management &amp; productivity companion</p>
+    </header>
+
+    <section class="profile-card">
+      <div class="profile-main">
+        <div class="avatar" id="avatarInitial">M</div>
+        <div>
+          <h2 id="profileName">Mike</h2>
+          <p id="profileEmail">Mike@gmail.com</p>
+        </div>
+      </div>
+      <button class="icon-btn" id="logoutBtn" type="button" aria-label="Sign out">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-2"></path>
+          <path d="M9 12h12"></path>
+          <path d="m18 9 3 3-3 3"></path>
+        </svg>
+      </button>
+    </section>
+
+    <section class="level-card">
+      <div class="level-top">
+        <div class="level-label">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 21h8"></path>
+            <path d="M12 17v4"></path>
+            <path d="M7 4h10v7a5 5 0 0 1-10 0V4Z"></path>
+            <path d="M5 6H3v3a4 4 0 0 0 4 4"></path>
+            <path d="M19 6h2v3a4 4 0 0 1-4 4"></path>
+          </svg>
+          <strong id="levelTitle">Level 1</strong>
+        </div>
+        <span id="xpText">0 / 100 XP</span>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <span id="xpBar"></span>
+      </div>
+    </section>
+
+    <section class="stats-grid" aria-label="Progress stats">
+      <article class="stat-card">
+        <svg class="stat-orange" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 21h8"></path>
+          <path d="M12 17v4"></path>
+          <path d="M7 4h10v7a5 5 0 0 1-10 0V4Z"></path>
+          <path d="M5 6H3v3a4 4 0 0 0 4 4"></path>
+          <path d="M19 6h2v3a4 4 0 0 1-4 4"></path>
+        </svg>
+        <strong id="completedCount">0</strong>
+        <p>Tasks Completed</p>
+      </article>
+      <article class="stat-card">
+        <svg class="stat-purple" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m13 2-9 13h8l-1 7 9-13h-8l1-7Z"></path>
+        </svg>
+        <strong><span id="streakCount">1</span> days</strong>
+        <p>Current Streak</p>
+      </article>
+      <article class="stat-card">
+        <svg class="stat-blue" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3L5.8 21 7 14.2 2 9.3l6.9-1L12 2Z"></path>
+        </svg>
+        <strong id="levelCount">1</strong>
+        <p>Level</p>
+      </article>
+    </section>
+
+    <section class="stress-card" id="stressCard">
+      <div class="stress-top">
+        <div class="stress-title">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 12h4l2-8 4 16 2-8h6"></path>
+          </svg>
+          <strong>Stress Level</strong>
+        </div>
+        <strong id="stressLabel">Low</strong>
+      </div>
+      <div class="progress-track stress-track" aria-hidden="true">
+        <span id="stressBar"></span>
+      </div>
+      <p id="stressMessage">Based on workload and deadlines</p>
+    </section>
+
+    <section class="fatigue-alert" id="fatigueAlert" hidden>
+      <div class="fatigue-heading">
+        <span class="fatigue-icon" aria-hidden="true">!</span>
+        <strong>You seem mentally fatigued</strong>
+      </div>
+      <p id="fatigueIntro">Your current workload is high. Consider these:</p>
+      <ul id="fatigueTips"></ul>
+      <button class="fatigue-close" id="fatigueClose" type="button" aria-label="Dismiss alert">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </section>
+
+    <section class="task-card">
+      <h2>Add New Task</h2>
+      <form id="taskForm">
+        <input type="text" id="taskTitle" placeholder="What needs to be done?" autocomplete="off">
+        <div class="task-row">
+          <input type="datetime-local" id="taskDeadline" aria-label="Task deadline">
+          <button class="add-btn" type="submit">
+            <span aria-hidden="true">+</span>
+            Add
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="controls" aria-label="Task filters">
+      <div class="filter-label">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 4h18l-7 8v6l-4 2v-8L3 4Z"></path>
+        </svg>
+        <span>Filter:</span>
+      </div>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" type="button" data-filter="all">All <span id="allCount">0</span></button>
+        <button class="filter-tab" type="button" data-filter="active">Active <span id="activeCount">0</span></button>
+        <button class="filter-tab" type="button" data-filter="completed">Completed <span id="doneCount">0</span></button>
+      </div>
+    </section>
+
+    <section class="task-list" id="taskList" aria-live="polite">
+      <p class="empty-state">No tasks yet. Add your first task above!</p>
+    </section>
+  </main>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
